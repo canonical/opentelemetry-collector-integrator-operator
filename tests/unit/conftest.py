@@ -7,7 +7,7 @@ import pytest
 from ops import testing
 from pydantic import BaseModel, ValidationError, field_validator
 
-from charm import OtelcolIntegratorOperatorCharm
+from charm import OpentelemetryCollectorIntegratorOperatorCharm
 
 
 @pytest.fixture
@@ -16,10 +16,10 @@ def ctx():
 
     This fixture provides a configured ops.testing.Context instance
     with all necessary metadata, actions, and config options for testing
-    the OtelcolIntegratorOperatorCharm.
+    the OpentelemetryCollectorIntegratorOperatorCharm.
     """
     return testing.Context(
-        OtelcolIntegratorOperatorCharm,
+        OpentelemetryCollectorIntegratorOperatorCharm,
         meta={
             "name": "otelcol-integrator",
             "provides": {

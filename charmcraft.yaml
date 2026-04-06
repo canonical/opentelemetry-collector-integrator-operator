@@ -1,7 +1,7 @@
 # This file configures Charmcraft.
 # See https://documentation.ubuntu.com/charmcraft/stable/reference/files/charmcraft-yaml-file/
 type: charm
-name: otelcol-integrator
+name: opentelemetry-collector-integrator
 title: OpenTelemetry Collector Integrator
 summary: Enables OpenTelemetry Collector to send telemetry to external backends.
 description: |
@@ -80,7 +80,7 @@ actions:
 
       example:
 
-        juju run otelcol-integrator/leader create-secret \
+        juju run opentelemetry-collector-integrator/leader create-secret \
             name=my-secret \
             token=0000-1111-2222-3333 \
             cafile="$(cat service.key | base64 -w0)" \

@@ -21,15 +21,15 @@ def test_deploy(charm: pathlib.Path, juju: jubilant.Juju):
     resources = {
         "some-container-image": METADATA["resources"]["some-container-image"]["upstream-source"]
     }
-    juju.deploy(charm.resolve(), app="otelcol-integrator-operator", resources=resources)
+    juju.deploy(charm.resolve(), app="opentelemetry-collector-integrator-operator", resources=resources)
     juju.wait(jubilant.all_active)
 
 
-# If you implement otelcol_integrator.get_version in the charm source,
+# If you implement opentelemetry_collector_integrator.get_version in the charm source,
 # remove the @pytest.mark.skip line to enable this test.
 # Alternatively, remove this test if you don't need it.
-@pytest.mark.skip(reason="otelcol_integrator.get_version is not implemented")
+@pytest.mark.skip(reason="opentelemetry_collector_integrator.get_version is not implemented")
 def test_workload_version_is_set(charm: pathlib.Path, juju: jubilant.Juju):
     """Check that the correct version of the workload is running."""
-    version = juju.status().apps["otelcol-integrator-operator"].version
+    version = juju.status().apps["opentelemetry-collector-integrator-operator"].version
     assert version == "3.14"  # Replace 3.14 by the expected version of the workload.

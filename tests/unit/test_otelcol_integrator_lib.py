@@ -2,7 +2,7 @@
 # Copyright 2026 Canonical Ltd.
 # See LICENSE file for licensing details.
 
-"""Unit tests for otelcol_integrator library."""
+"""Unit tests for opentelemetry_collector_integrator library."""
 
 import json
 from unittest.mock import MagicMock
@@ -11,7 +11,7 @@ import pytest
 from ops import ModelError, SecretNotFoundError
 from pydantic import ValidationError
 
-from charms.otelcol_integrator.v0.otelcol_integrator import (
+from charms.opentelemetry_collector_integrator.v0.opentelemetry_collector_integrator import (
     OtelcolIntegratorProviderRelationUpdater,
     OtelcolIntegratorProviderAppData,
     OtelcolIntegratorRequirer,

@@ -1,6 +1,6 @@
 # OpenTelemetry Collector Integrator Operator
 
-[![CharmHub Badge](https://charmhub.io/otelcol-integrator/badge.svg)](https://charmhub.io/otelcol-integrator)
+[![CharmHub Badge](https://charmhub.io/opentelemetry-collector-integrator/badge.svg)](https://charmhub.io/opentelemetry-collector-integrator)
 [![Release](https://github.com/canonical/CHARM-k8s-operator/actions/workflows/release.yaml/badge.svg)](https://github.com/canonical/CHARM-k8s-operator/actions/workflows/release.yaml)
 [![Discourse Status](https://img.shields.io/discourse/status?server=https%3A%2F%2Fdiscourse.charmhub.io&style=flat&label=CharmHub%20Discourse)](https://discourse.charmhub.io)
 
@@ -21,7 +21,7 @@ The charm securely manages Juju secrets containing credentials and API keys, aut
 Deploy the charm to your Juju model:
 
 ```bash
-juju deploy otelcol-integrator
+juju deploy opentelemetry-collector-integrator
 ```
 
 ### Creating Secrets
@@ -29,7 +29,7 @@ juju deploy otelcol-integrator
 If your configuration includes sensitive data (API keys, tokens, certificates), use the `create-secret` action:
 
 ```bash
-juju run otelcol-integrator/leader create-secret \
+juju run opentelemetry-collector-integrator/leader create-secret \
   name=my-secret \
   token=0000-1111-2222-3333 \
   cafile="$(cat service.key | base64 -w0)" \
@@ -83,7 +83,7 @@ Requirements:
 Apply the configuration:
 
 ```bash
-juju config otelcol-integrator \
+juju config opentelemetry-collector-integrator \
   config_yaml=@config.yaml \
   metrics_pipeline=true \
   traces_pipeline=false \
@@ -100,10 +100,10 @@ juju config otelcol-integrator \
 Relate the integrator to an OpenTelemetry Collector charm that supports the `otelcol` relation:
 
 ```bash
-juju integrate otelcol-integrator:external-config otelcol:external-config
+juju integrate opentelemetry-collector-integrator:external-config otelcol:external-config
 ```
 
-The otelcol-integrator will automatically provide the configuration and grant access to any referenced secrets to the related OpenTelemetry Collector instance.
+The opentelemetry-collector-integrator will automatically provide the configuration and grant access to any referenced secrets to the related OpenTelemetry Collector instance.
 
 ## Example
 
@@ -111,7 +111,7 @@ Complete workflow:
 
 ```bash
 # Deploy
-juju deploy otelcol-integrator
+juju deploy opentelemetry-collector-integrator
 juju deploy otelcol
 
 # Create secret with credentials
@@ -120,12 +120,12 @@ juju add-secret splunk-creds \
   cafile="$(cat splunk-ca.crt  | base64 -w0)"
 
 # Configure
-juju config otelcol-integrator \
+juju config opentelemetry-collector-integrator \
   config_yaml=@my-exporter-config.yaml \
   metrics_pipeline=true
 
 # Integrate
-juju integrate otelcol-integrator:external-config otelcol:external-config
+juju integrate opentelemetry-collector-integrator:external-config otelcol:external-config
 ```
 
 # Contributing
