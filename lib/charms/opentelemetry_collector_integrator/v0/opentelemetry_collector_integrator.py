@@ -4,7 +4,7 @@
 # Learn more at: https://juju.is/docs/sdk
 
 
-"""OpentelemetryCollectoIntegrator charm library.
+"""OpentelemetryCollectorIntegrator charm library.
 
 This library provides utilities for integrating with the Opentelemetry Collector Integrator Charm
 through the external-config relation. It supports sharing configuration and secrets
