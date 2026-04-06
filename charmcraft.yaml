@@ -37,6 +37,11 @@ parts:
     source: .
     build-snaps:
       - astral-uv
+  other-files:
+    plugin: dump
+    source: .
+    stage:
+      - icon.svg
 
 config:
   options:
