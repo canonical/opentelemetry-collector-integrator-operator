@@ -11,7 +11,7 @@ import logging
 from typing import List, Optional
 
 import ops
-from charms.otelcol_integrator.v0.otelcol_integrator import (
+from charms.opentelemetry_collector_integrator.v0.opentelemetry_collector_integrator import (
     OtelcolIntegratorProviderRelationUpdater,
     OtelcolIntegratorProviderAppData,
     Pipeline,
@@ -33,7 +33,7 @@ from secret_manager import SecretManager, SecretInfo
 logger = logging.getLogger(__name__)
 
 
-class OtelcolIntegratorOperatorCharm(ops.CharmBase):
+class OpentelemetryCollectorIntegratorOperatorCharm(ops.CharmBase):
     """Integrator charm that shares configuration and secrets via external-config relation."""
 
     def __init__(self, framework: ops.Framework):
@@ -168,4 +168,4 @@ class OtelcolIntegratorOperatorCharm(ops.CharmBase):
 
 
 if __name__ == "__main__":  # pragma: nocover
-    ops.main(OtelcolIntegratorOperatorCharm)
+    ops.main(OpentelemetryCollectorIntegratorOperatorCharm)

@@ -14,9 +14,9 @@ from unittest.mock import Mock, patch
 import pytest
 from ops import testing, ModelError
 
-from charm import OtelcolIntegratorOperatorCharm
+from charm import OpentelemetryCollectorIntegratorOperatorCharm
 from secret_manager import SecretManager, SecretInfo, _is_base64_encoded
-from charms.otelcol_integrator.v0.otelcol_integrator import extract_secret_uris
+from charms.opentelemetry_collector_integrator.v0.opentelemetry_collector_integrator import extract_secret_uris
 
 
 def test_create_secret_with_base64_value(ctx: testing.Context):
@@ -68,7 +68,7 @@ def test_create_secret_without_name_fails(ctx: testing.Context):
     """Test that create-secret action fails without name parameter."""
     # GIVEN: An action invocation without name parameter
     ctx_no_name = testing.Context(
-        OtelcolIntegratorOperatorCharm,
+        OpentelemetryCollectorIntegratorOperatorCharm,
         meta={
             "name": "otelcol-integrator",
             "provides": {"external-config": {"interface": "external-config"}},

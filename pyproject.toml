@@ -2,7 +2,7 @@
 # See LICENSE file for licensing details.
 
 [project]
-name = "otelcol-integrator-operator"
+name = "opentelemetry-collector-integrator-operator"
 version = "0.0"  # This field is not used
 requires-python = "~=3.10"
 
@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 
-[project.dependency-groups]
+[dependency-groups]
 dev = [
   # Linting
   "ruff",
@@ -38,7 +38,7 @@ branch = true
 # Include only source code and our own libraries
 include = [
     "src/*",
-    "lib/charms/otelcol_integrator/*",
+    "lib/charms/opentelemetry_collector_integrator/*",
 ]
 
 [tool.coverage.report]
